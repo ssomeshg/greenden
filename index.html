@@ -17,7 +17,7 @@
 
     <nav class="bg-green-100 p-3 flex items-center shadow-xl justify-between sticky top-0 z-10">
         <h1 class="text-xl">Greenden</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        <svg id="menunav" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="w-6 h-6 md:hidden">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
@@ -31,6 +31,19 @@
         </ul>
 
     </nav>
+    <!-- side nav bar -->
+    <section id="sidenav" class="bg-green-500 top-0 transition-all duration-1000" style="height: 100vh; width: 50%; position: fixed; z-index: 111; right: -50%;">
+        <div class="close">
+            <h1 id="closenav" class="inline p-5 cursor-pointer">X</h1>
+        </div>
+        <ul class="flex flex-col gap-5 items-center text-gray-600">
+            <li><a href="index.html" class="hover:underline hover:text-black">
+                    Home
+                </a></li>
+            <li><a href="product.html" class="hover:underline hover:text-black">Products</a></li>
+            <li><a href="" class="hover:underline hover:text-black">Contact</a></li>
+        </ul>
+    </section>
 
     <!-- Header section -->
 
@@ -173,7 +186,7 @@
         <p class="font-medium">&copy; All copyrights</p>
 
     </section>
-
+<script src="script.js"></script>
 </body>
 
 </html>
