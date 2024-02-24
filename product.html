@@ -47,70 +47,69 @@
     <!-- products -->
 
     <section class="mt-5">
-        <div class="text-center">
             <h1 class="font-bold text-3xl">Our Products</h1>
-            <input type="text " class="border border-black p-3 rounded" name="" id="" style="width: 80%;" placeholder="search for a product">
-        </div>
-        <div class="grid grid-cols-2 gap-5 text-center mt-5 md:grid-cols-4 justify-center p-5">
+            <input id="search" type="text " class="border border-black p-3 rounded" style="width: 80%;" placeholder="search for a product">
+        
+        <div id="product_container" class="grid grid-cols-2 gap-5 text-center mt-5 md:grid-cols-4 justify-center p-5">
             <div class="mt-3">
                 <img src="assets/1.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Les flower</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/2.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Cocunut plant</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/3.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>flower</h1>
+                <span>$20</span>
             </div>
             <div  class="mt-3">
                 <img src="assets/4.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>show flower</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/1.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Les flower</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/2.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Cocunut plant</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/3.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Plant 1</h1>
+                <span>$20</span>
             </div>
             <div  class="mt-3">
                 <img src="assets/4.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Pflower</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/1.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Plant 1</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/2.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>flower</h1>
+                <span>$20</span>
             </div>
             <div class="mt-3">
                 <img src="assets/3.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Plant 1</h1>
+                <span>$20</span>
             </div>
             <div  class="mt-3">
                 <img src="assets/4.jpg" class="inline hover:shadow-lg transform hover:-translate-y-2 rounded " alt="">
-                <p>Plant 1</p>
-                <p>$20</p>
+                <h1>Plant 1</h1>
+                <span>$20</span>
             </div>
         </div>
 
@@ -118,12 +117,38 @@
         <!-- footer  -->
         <section class="bg-green-100 p-10">
             <h1 class="text-3xl font-bold ">Greeden</h1>
-            <p class="mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus inventore quae qui laudantium? Quia facilis sit totam quisquam autem, ullam ut eos, iste dignissimos reprehenderit quidem deleniti rem molestiae fuga?</p>
-            <p class="font-medium">&copy; All copyrights</p>
+            <p class="mt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus inventore quae qui laudantium? Quia facilis sit totam quisquam autem, ullam ut eos, iste dignissimos reprehenderit quidem deleniti rem molestiae fuga?</h1>
+            <p class="font-medium">&copy; All copyrights</h1>
     
         </section>
+        <script>
+            var search = document.getElementById("search");
+            var productcontainer = document.getElementById("product_container");
+            var productlist = productcontainer.querySelectorAll("div");
+            console.log(productlist);
 
+            search.addEventListener("keyup", function(event) {
+                var enteredValue = event.target.value.toUpperCase();
+                console.log(search)
+                for(count=0; count < productlist.length; count = count + 1){
+                    var productname = productlist[count].querySelector("h1").textContent.toUpperCase();
+                    if (productname.indexOf(enteredValue) < 0)
+                    {
+                        productlist[count].style.display = "none";
+                    }
+                    else {
+                        productlist[count].style.display = "block";
+        
+                    }
+                }
+        
+            });
+        
+        </script>
+        
+        
         <script src="script.js"></script>
+        
 
 </body>
 </html>
